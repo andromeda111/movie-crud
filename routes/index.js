@@ -1,9 +1,10 @@
 var express = require('express');
 var router = express.Router();
+var title = 'The Movie Room'
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
+  res.render('index', { title: title });
 });
 
 module.exports = router;
