@@ -3,8 +3,13 @@ body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
-#site-header {
+.site-header {
   background-color: rgb(50, 50, 55);
   margin-bottom: 20px;
   border: 1px solid black;
+  background-image: url("images/wiseau.jpg");
+}
+
+.site-header-img {
+  width: 260px;
 }
