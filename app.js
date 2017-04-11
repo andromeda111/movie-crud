@@ -5,7 +5,7 @@ var logger = require('morgan');
 var bodyParser = require('body-parser');
 
 var index = require('./routes/index');
-var users = require('./routes/users');
+var movies = require('./routes/movies');
 
 var app = express();
 
@@ -21,7 +21,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', index);
-// app.use('/movies', users);
+app.use('/movies', movies);
 // app.get('/movies/:id')
 // app.put('/movies/:id')
 // app.delete('/movies/:id')

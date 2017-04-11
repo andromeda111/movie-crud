@@ -1,0 +1,33 @@
+<div class="row">
+    <div class="container panel panel-default">
+
+        <h2 class="panel-heading">{{ heading }}</h2>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Director</th>
+                    <th>Year</th>
+                    <th>My Rating</th>
+                    <th></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#each movies}}
+                    <tr>
+                        <td>{{title}}</td>
+                        <td>{{director}}</td>
+                        <td>{{year}}</td>
+                        <td>{{my_rating}}</td>
+                        <td>Edit</td>
+                        <td>Delete</td>
+                    </tr>
+                {{/each}}
+            </tbody>
+        </table>
+
+    </div>
+</div>
+
+<a href="/">Return to home page</a>

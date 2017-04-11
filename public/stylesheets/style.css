@@ -3,6 +3,8 @@ body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
-a {
-  color: #00B7FF;
+#site-header {
+  background-color: rgb(50, 50, 55);
+  margin-bottom: 20px;
+  border: 1px solid black;
 }
