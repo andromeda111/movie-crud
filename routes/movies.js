@@ -24,28 +24,27 @@ router.get('/:id', function(req, res, next) {
           movie })
     })
 })
-//
-// router.post('/new', (req, res, next) => {
-//   const { title, director, year, rating, imgUrl } = req.body
-//   db('movies').then(movies => {
-//       res.render('movies/index', {
-//         heading: heading,
-//         movies })
-//   })
-//
-//
-//
-//   const guests = JSON.parse(guestsJSON)
-//   guests.push({ name, imgUrl, item, inLegacy })
-//   const guest = { name, imgUrl, item, inLegacy }
-//
-//   fs.writeFile(guestPath, JSON.stringify(guests), (writeErr) => {
-//     if (writeErr) {
-//       return next(writeErr)
-//       }
-//       res.send(guest)
-//     })
-//   })
-// })
+
+router.post('/', (req, res, next) => {
+  const movie = {
+    title: req.body['new-title'],
+    director: req.body['new-director'],
+    year: req.body['new-year'],
+    my_rating: req.body['new-rating'],
+    poster_url: req.body['new-img-url']
+  }
+  db('movies').insert(movie, '*').then(newMovie => {
+    var id = newMovie[0].id
+    res.redirect('/movies/' + id)
+  })
+})
+
+router.delete('/:id', (req, res, next) => {
+  var id = req.params.id
+  console.log(req.body);
+  db('movies').del().where({id}).then(() => {
+    res.redirect('/movies')
+  })
+})
 
 module.exports = router;

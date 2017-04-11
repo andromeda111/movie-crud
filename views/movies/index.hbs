@@ -2,7 +2,6 @@
     <div class="container panel panel-default">
 
         <h2 class="col-xs-6">{{ heading }}</h2>
-        <p class="col-xs-6 text-right"><a href="movies/new">Add New</a></p>
         <table class="table">
             <thead>
                 <tr>
@@ -24,7 +23,7 @@
                         <td>{{year}}</td>
                         <td>{{my_rating}}</td>
                         <td>Edit</td>
-                        <td>Delete</td>
+                        <td><form action="/movies/{{id}}?_method=DELETE" method="POST"><input class="btn btn-default"   type="submit" name="delete" value="Delete"></form></td> 
                     </tr>
                 {{/each}}
             </tbody>
