@@ -12,15 +12,14 @@ exports.seed = function(knex) {
         director: 'Tommy Wiseau',
         year: 2003,
         my_rating: 2,
-        poster_url: 'http://www.imdb.com/title/tt0368226/mediaviewer/rm2491850496?ref_=tt_ov_i'
-      },
+        poster_url: 'https://images-na.ssl-images-amazon.com/images/M/MV5BMTg4MTU1MzgwOV5BMl5BanBnXkFtZTcwNjM1MTAwMQ@@._V1_.jpg'      },
       {
         id: 2,
         title: 'Kung Fury',
         director: 'David Sandberg',
         year: 2015,
         my_rating: 5,
-        poster_url: 'http://www.imdb.com/title/tt3472226/mediaviewer/rm1965028352?ref_=tt_ov_i'
+        poster_url: 'https://images-na.ssl-images-amazon.com/images/M/MV5BMjQwMjU2ODU5NF5BMl5BanBnXkFtZTgwNTU1NjM4NTE@._V1_SY999_CR0,0,702,999_AL_.jpg'
       },
       {
         id: 3,
@@ -28,7 +27,7 @@ exports.seed = function(knex) {
         director: 'James Gunn',
         year: 2014,
         my_rating: 5,
-        poster_url: 'http://www.imdb.com/title/tt2015381/mediaviewer/rm1108790784?ref_=tt_ov_i'
+        poster_url: 'https://images-na.ssl-images-amazon.com/images/M/MV5BMTAwMjU5OTgxNjZeQTJeQWpwZ15BbWU4MDUxNDYxODEx._V1_SY1000_CR0,0,674,1000_AL_.jpg'
       }
     ]);
   }).then(() => {

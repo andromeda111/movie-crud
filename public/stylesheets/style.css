@@ -4,12 +4,38 @@ body {
 }
 
 .site-header {
-  background-color: rgb(50, 50, 55);
-  margin-bottom: 20px;
+  /*background-color: rgb(50, 50, 55);
+  margin-bottom: 20px;*/
   border: 1px solid black;
-  background-image: url("images/wiseau.jpg");
 }
 
 .site-header-img {
   width: 260px;
+}
+
+.poster-thumb {
+  width: 80px;
+}
+
+.poster-lg {
+  width: 220px;
+}
+
+.single-movie {
+  padding-top: 30px;
+}
+
+.single-table {
+  width: 350px;
+  margin: auto;
+}
+
+.footer {
+  padding: 10px;
+  height: 40px;
+  text-align: center;
+}
+
+.new-form {
+  margin: auto;
 }

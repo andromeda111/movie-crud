@@ -6,6 +6,8 @@ var bodyParser = require('body-parser');
 
 var index = require('./routes/index');
 var movies = require('./routes/movies');
+// var show = require('./routes/show');
+// var post = require('./routes/post');
 
 var app = express();
 
@@ -22,10 +24,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', index);
 app.use('/movies', movies);
-// app.get('/movies/:id')
-// app.put('/movies/:id')
+// app.use('/movies', show);
+// app.use('/movies/post', post);
 // app.delete('/movies/:id')
-// app.post('/movies')
 // app.get('/movies/new/')
 // app.get('/movies/:id/edit')
 

@@ -1,10 +1,12 @@
 <div class="row">
     <div class="container panel panel-default">
 
-        <h2 class="panel-heading">{{ heading }}</h2>
+        <h2 class="col-xs-6">{{ heading }}</h2>
+        <p class="col-xs-6 text-right"><a href="movies/new">Add New</a></p>
         <table class="table">
             <thead>
                 <tr>
+                    <th></th>
                     <th>Title</th>
                     <th>Director</th>
                     <th>Year</th>
@@ -16,7 +18,8 @@
             <tbody>
                 {{#each movies}}
                     <tr>
-                        <td>{{title}}</td>
+                        <td><img class="poster-thumb" src="{{poster_url}}" alt=""></td>
+                        <td><a href="/movies/{{this.id}}">{{title}}</a></td>
                         <td>{{director}}</td>
                         <td>{{year}}</td>
                         <td>{{my_rating}}</td>
@@ -29,5 +32,3 @@
 
     </div>
 </div>
-
-<a href="/">Return to home page</a>

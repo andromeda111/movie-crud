@@ -1,0 +1,45 @@
+<div class="row">
+  <div class="col-xs-4 col-xs-offset-4 panel panel-body">
+    <form class="col-xs-8 col-xs-offset-2 text-center">
+      <h4 class="text-center">Enter Movie Information</h4>
+      <div class="form-group">
+        <label for="new-title">Title</label> <input id="new-title" type="text" class="form-control text-center">
+      </div>
+      <div class="form-group">
+        <label for="new-director">Director</label> <input id="new-director" type="text" class="form-control text-center">
+      </div>
+      <div class="form-group">
+        <label for="new-year">Year</label> <input id="new-year" type="number" class="form-control text-center">
+      </div>
+      <div class="form-group">
+        <label for="new-rating">My Rating</label> <input id="new-rating" type="number" min="0" max="5" class="form-control text-center" placeholder="0-5">
+      </div>
+      <div class="form-group">
+        <label for="new-img-url">Poster URL</label> <input id="new-img-url" type="text" class="form-control text-center">
+      </div>
+      <div class="form-group text-center">
+        <input class="btn btn-default" id="submit" type="submit">
+      </div>
+    </form>
+
+  </div>
+
+</div>
+
+<script src="/js/jquery-3.2.0.min.js" charset="utf-8"></script>
+<script src="/js/requests.js" charset="utf-8"></script>
+<script type="text/javascript">
+  $('form').submit(function(event) {
+    event.preventDefault();
+
+    var data = {
+      title: $('#new-title').val(),
+      director: $('#new-director').val(),
+      year: $('#new-year').val(),
+      rating: $('#new-rating').val(),
+      imgUrl: $('#new-img-url').val()
+    };
+
+    makeRequest('POST', '', data);
+  });
+</script>
