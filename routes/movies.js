@@ -65,6 +65,7 @@ router.put('/:id', (req, res, next) => {
     poster_url: req.body['new-img-url']
   }
   db('movies').where({id}).update(movie).then(() => {
+    console.log(movie);
     res.redirect('/movies/' + id)
   })
 
