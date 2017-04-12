@@ -16,6 +16,15 @@ router.get('/new', function(req, res, next) {
   res.render('movies/new');
 });
 
+router.get('/edit/:id', function(req, res, next) {
+  var id = req.params.id;
+    db('movies').select('*').where({id}).first().then(movie => {
+        res.render('movies/edit', {
+          heading: heading,
+          movie })
+    })
+})
+
 router.get('/:id', function(req, res, next) {
   var id = req.params.id;
     db('movies').select('*').where({id}).first().then(movie => {
@@ -41,10 +50,24 @@ router.post('/', (req, res, next) => {
 
 router.delete('/:id', (req, res, next) => {
   var id = req.params.id
-  console.log(req.body);
   db('movies').del().where({id}).then(() => {
     res.redirect('/movies')
   })
+})
+
+router.put('/:id', (req, res, next) => {
+  var id = req.params.id
+  const movie = {
+    title: req.body['new-title'],
+    director: req.body['new-director'],
+    year: req.body['new-year'],
+    my_rating: req.body['new-rating'],
+    poster_url: req.body['new-img-url']
+  }
+  db('movies').where({id}).update(movie).then(() => {
+    res.redirect('/movies/' + id)
+  })
+
 })
 
 module.exports = router;

@@ -22,8 +22,8 @@
                         <td>{{director}}</td>
                         <td>{{year}}</td>
                         <td>{{my_rating}}</td>
-                        <td>Edit</td>
-                        <td><form action="/movies/{{id}}?_method=DELETE" method="POST"><input class="btn btn-default"   type="submit" name="delete" value="Delete"></form></td> 
+                        <td><form action="/movies/edit/{{id}}?_method=GET" method="GET"><input class="btn btn-default"   type="submit" name="edit" value="Edit"></form></td> 
+                        <td><form action="/movies/{{id}}?_method=DELETE" method="POST"><input class="btn btn-default"   type="submit" name="delete" value="Delete"></form></td>
                     </tr>
                 {{/each}}
             </tbody>
