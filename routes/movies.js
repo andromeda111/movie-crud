@@ -16,7 +16,7 @@ router.get('/new', function(req, res, next) {
   res.render('movies/new');
 });
 
-router.get('/edit/:id', function(req, res, next) {
+router.get('/:id/edit', function(req, res, next) {
   var id = req.params.id;
     db('movies').select('*').where({id}).first().then(movie => {
         res.render('movies/edit', {
@@ -55,7 +55,7 @@ router.delete('/:id', (req, res, next) => {
   })
 })
 
-router.put('/:id', (req, res, next) => {
+router.put('/:id/edit', (req, res, next) => {
   var id = req.params.id
   const movie = {
     title: req.body['new-title'],
@@ -65,7 +65,6 @@ router.put('/:id', (req, res, next) => {
     poster_url: req.body['new-img-url']
   }
   db('movies').where({id}).update(movie).then(() => {
-    console.log(movie);
     res.redirect('/movies/' + id)
   })
 
